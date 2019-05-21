@@ -1,0 +1,12 @@
+#!/bin/bash -ex
+
+CXXFLAGS="-std=c++17 -g -O3 -fPIC"
+
+g++ -c -o a.o a.cc $CXXFLAGS
+g++ -c -o b.o b.cc $CXXFLAGS
+
+gcc -shared -o liba.so a.o
+gcc -shared -o libb.so b.o
+
+g++ -o main-shared main.cc -Wl,-rpath -Wl,. -L. -la -lb $CXXFLAGS
+

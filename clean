@@ -1,0 +1,4 @@
+#!/bin/bash -ex
+
+rm -f *.so *.o main-*
+

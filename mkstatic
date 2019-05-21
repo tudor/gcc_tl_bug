@@ -1,0 +1,6 @@
+#!/bin/bash -ex
+
+CXXFLAGS="-std=c++17 -g -O3 -fPIC"
+
+g++ -o main-static main.cc a.cc b.cc $CXXFLAGS
+
